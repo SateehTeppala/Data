@@ -7,6 +7,8 @@ class Node:
         self.next = None
 '''
 class Linked List
+function push:
+add item in first in Linked List
 '''
 class LinkedList:
     def __init__(self):
