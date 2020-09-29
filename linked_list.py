@@ -20,7 +20,7 @@ class LinkedList:
     def print(self):
         t = self.head
         while t:
-            print(t.data)
+            print(t.data,end=' ')
             t = t.next
 '''
 Main Function
@@ -31,5 +31,5 @@ if __name__ == "__main__":
     while n >0:
         l.push(int(input()))
         n -= 1
-    print("Linked List")
+    print("Linked List:")
     l.print()
