@@ -22,8 +22,9 @@ class LinkedList:
         while t:
             print(t.data)
             t = t.next
-
-
+'''
+Main Function
+'''
 if __name__ == "__main__":
     l = LinkedList()
     n = int(input())
