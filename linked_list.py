@@ -1,7 +1,13 @@
+'''
+class Node
+'''
 class Node:
     def __init__(self,data):
         self.data = data
         self.next = None
+'''
+class Linked List
+'''
 class LinkedList:
     def __init__(self):
         self.head = None
@@ -22,4 +28,5 @@ if __name__ == "__main__":
     while n >0:
         l.push(int(input()))
         n -= 1
+    print("Linked List")
     l.print()
