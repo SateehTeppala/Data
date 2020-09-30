@@ -35,13 +35,19 @@ class LinkedList:
     '''
     this function add node after the given node
     '''
-    def insertafter(self,prev_node,data):
-        node = Node(data)
-        if prev_node is None:
-            print("given previous node is not found")
-            return
-        node.next = prev_node.next
-        prev_node.next = node
+    def insertafter(self,x,data):
+        n = self.head
+        while n.next:
+            if n.data == x:
+                break
+            n = n.next
+        if n is None:
+            print("Item is Not in Linked List")
+        else:
+            node = Node(data)
+            node.next = n.next
+            n.next = node
+
     def print(self):
         t = self.head
         c=0
@@ -49,7 +55,7 @@ class LinkedList:
             c+=1
             print(t.data,end=' ')
             t = t.next
-        print(" \n length of Linked List is",c)
+        print("\nlength of Linked List is",c)
 '''
 Main Function
 '''
@@ -59,11 +65,14 @@ if __name__ == "__main__":
     m=n
     print("Push Operation")
     while n >0:
-        l.push(int(input()))
+        l.push(input())
         n -= 1
     print("Append Operation")
     while m>0:
         l.append(int(input()))
         m -=1
-    print("Linked lnist:")
+    l.print()
+    d=input("enter previous node:")
+    l.insertafter(d,143)
+    print("Linked list:")
     l.print()
