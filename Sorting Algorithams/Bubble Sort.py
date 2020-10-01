@@ -1,3 +1,6 @@
+'''
+Optimized Bubble Sort Algorithm
+'''
 def BubbleSort(array):
     for i in range(len(array)):
         swap = True
