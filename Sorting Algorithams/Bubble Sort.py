@@ -1,6 +1,7 @@
 '''
-Optimized Bubble Sort Algorithm
+Optimized   Bubble Sort Algorithm
 '''
+import random
 def BubbleSort(array):
     for i in range(len(array)):
         swap = True
@@ -12,7 +13,7 @@ def BubbleSort(array):
             break
 
 if __name__ == "__main__":
-    data = list(map(int,input().split()))
+    data = random.sample(range(-50,50),50)
     BubbleSort(data)
     print("Array Sorting using Bubble Sort")
     print(data)
