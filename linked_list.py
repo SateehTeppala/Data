@@ -35,7 +35,7 @@ class LinkedList:
     '''
     this function add node after the given node
     '''
-    def insertafter(self,x,data):
+    def insertmid(self,x,data):
         n = self.head
         while n.next:
             if n.data == x:
@@ -45,9 +45,11 @@ class LinkedList:
             print("Item is Not in Linked List")
         else:
             node = Node(data)
-            node.next = n.next
-            n.next = node
-
+            node.next = x.next
+            x.next = node
+    '''
+    prints the Linked List along with length of the list
+    '''
     def print(self):
         t = self.head
         c=0
@@ -72,7 +74,7 @@ if __name__ == "__main__":
         l.append(int(input()))
         m -=1
     l.print()
-    d=input("enter previous node:")
-    l.insertafter(d,143)
+    d=input("Enter node to Insert:")
+    l.insertmid(l.head.next,d)
     print("Linked list:")
     l.print()
