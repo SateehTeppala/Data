@@ -1,3 +1,6 @@
+'''
+Selection Sort
+'''
 import random
 def SelectionSort(array):
     for step in range(len(array)):
