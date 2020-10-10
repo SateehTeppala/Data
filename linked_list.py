@@ -1,4 +1,5 @@
 '''
+@author: Sateesh Teppala
 class Node which creates New Nodes
 '''
 class Node:
