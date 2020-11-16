@@ -1,19 +1,15 @@
 '''
 Optimized   Bubble Sort Algorithm
 '''
-import random
-def BubbleSort(array):
-    for i in range(len(array)):
-        swap = True
-        for j in range(0,len(array)-i-1):
-            if array[j] > array[j+1]:
-                array[j], array[j+1] = array[j+1],array[j]
-                swap = False
-        if swap:
-            break
+def BubbleSort(a):
+    for i in range(len(a)):
+        for j in range(0,len(a)-i-1):
+            if a[j] > a[j+1]:
+                a[j],a[j+1] = a[j+1],a[j]
+    return a
 
 if __name__ == "__main__":
-    data = random.sample(range(-50,50),50)
-    BubbleSort(data)
+    a = [2,312,21,121,2,454,567,787,453,45,545,3,534,5,34]
+    data = BubbleSort(a)
     print("Array Sorting using Bubble Sort")
     print(data)
