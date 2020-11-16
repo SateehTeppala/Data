@@ -2,7 +2,6 @@
 @author:Sateesh Teppala
 Binary Search using Recurssion
 '''
-import random
 def Binary_Search(array,low,high,key):
 
     if high>=low:
@@ -13,12 +12,12 @@ def Binary_Search(array,low,high,key):
             return Binary_Search(array,mid+1,high,key)
         else:
             return Binary_Search(array,low,mid-1,key)
-
+        return
     else:
-        return False
+        return 
 
 if __name__=="__main__":
-    a = random.sample(range(1,50),5)
+    a = [21, 98, 52, 45, 62, 42, 15, 78]
     a.sort()
     print(a)
     key = int(input("Enter Key To Search"))
