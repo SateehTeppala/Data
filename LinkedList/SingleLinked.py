@@ -1,6 +1,6 @@
 '''
 @author:Teppala Sa7eesh
-name:Single LinkedList
+name:Single LinkedList with all functions
 '''
 class Node:
     def __init__(self,data):
@@ -68,16 +68,35 @@ class LinkedList:
         previousnode.next = None
 
     def delAt(self,position):
+        if position < 0 or position > self.getLength():
+            print("Invalid position")
+            return
+        if self.head is not None:
+            if position == 0:
+                self.delHead()
+                return
+            currentnode = self.head
+            currentpostion = 0
+            while True:
+                if currentpostion == position:
+                    previousnode.next = currentnode.next
+                    currentnode.next = None
+                    break
+                previousnode = currentnode
+                currentnode = currentnode.next
+                currentpostion +=1
+
+    def reverseList(self):
+        previousnode = None
         currentnode = self.head
-        currentpostion = 0
-        while True:
-            if currentpostion == position:
-                previousnode.next = currentnode.next
-                currentnode.next = None
-                break
+        following = currentnode.next
+        while currentnode:
+            currentnode.next = previousnode
             previousnode = currentnode
-            currentnode = currentnode.next
-            currentpostion +=1
+            currentnode = following
+            if following:
+                following = following.next
+        self.head = previousnode
 
 
     def print(self):
@@ -104,9 +123,11 @@ if __name__ == '__main__':
     ll.insertBegin(new)
     at = Node(1)
     ll.insertAt(at,3)
-    ll.delAt(2)
     ll.print()
-    print('--------------------------------')
+    #ll.delAt(2)
+    print('-------------------')
+    ll.reverseList()
+    ll.print()
     #ll.delEnd()
     #ll.print()
 
